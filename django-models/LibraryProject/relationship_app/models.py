@@ -15,7 +15,7 @@ class Book(models.Model):
     author = models.ForeignKey(Author,verbose_name='books', on_delete=models.CASCADE)
 
 class Library(models.Model):
-    name = models.CharField(max_length=50)
+    library_name = models.CharField(max_length=50)
     book = models.ManyToManyField(Book, verbose_name="library")
 
 
