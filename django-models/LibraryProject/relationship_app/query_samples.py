@@ -1,10 +1,10 @@
 from relationship_app.models import *
 
 # query books by a given author
-book = author_instance.books.all()
+books = author_instance.books.get(name)
 
 # list all books in library
-books = library_instance.books.all()
+books = Book.objects.all()
 
 # librarian for library
-librarian = library_instance.librarian.all()
+librarian = library_instance.librarian.get(name)
