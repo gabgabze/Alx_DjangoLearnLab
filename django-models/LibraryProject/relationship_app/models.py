@@ -12,7 +12,7 @@ class Author(models.Model):
 
 class Book(models.Model):
     title = models.CharField(max_length=50)
-    author = models.ForeignKey(Author,verbose_name='books' on_delete=models.CASCADE)
+    author = models.ForeignKey(Author,verbose_name='books', on_delete=models.CASCADE)
 
 class Library(models.Model):
     name = models.CharField(max_length=50)
@@ -20,5 +20,5 @@ class Library(models.Model):
 
 
 class Librarian(models.Model):
-    name = CharField(max_length=50)
+    name = models.CharField(max_length=50)
     library = models.OneToOneField(Library, verbose_name='librarian', on_delete=models.CASCADE)
