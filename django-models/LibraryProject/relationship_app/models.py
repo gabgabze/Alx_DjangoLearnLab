@@ -14,9 +14,6 @@ class Book(models.Model):
     title = models.CharField(max_length=50)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
 
-    class Meta:
-        db_table = 'Book'
-        verbose_name = 'books'
 
 class Library(models.Model):
     library_name = models.CharField(max_length=50)
