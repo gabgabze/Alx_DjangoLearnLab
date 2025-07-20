@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90af70dc-a1b1-4d03-9052-ccb1bb1c042d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/django-models/LibraryProject/relationship_app/urls..py" beforeDir="false" afterPath="$PROJECT_DIR$/django-models/LibraryProject/relationship_app/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-models/LibraryProject/relationship_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django-models/LibraryProject/relationship_app/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-models/LibraryProject/relationship_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/django-models/LibraryProject/relationship_app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +108,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1753039391610</updated>
-      <workItem from="1753039395184" duration="4399000" />
+      <workItem from="1753039395184" duration="4722000" />
     </task>
     <servers />
   </component>
