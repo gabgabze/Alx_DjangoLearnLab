@@ -6,10 +6,10 @@ from django.views.generic import ListView
 def book_list(request):
     books = Book.objects.all()
     context = {'books': books}
-    return render(request,'list_books.html',context)
+    return render(request,'relationship_app/list_books.html',context)
 
-class BookList(ListView):
+"""lass BookList(ListView):
     model = Book
     context_object_name = 'books'
-    template_name = 'list_book.html'
+    template_name = 'list_book.html'"""
 
