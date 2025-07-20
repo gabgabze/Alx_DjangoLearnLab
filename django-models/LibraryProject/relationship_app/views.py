@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from bookshelf.models import Book
-from django.views.generic import ListView
+from django.views.generic import ListView,DetailView
 # Create your views here.
 
 def book_list(request):
@@ -8,8 +8,8 @@ def book_list(request):
     context = {'books': books}
     return render(request,'relationship_app/list_books.html',context)
 
-"""lass BookList(ListView):
+class BookDetail(DetailView):
     model = Book
     context_object_name = 'books'
-    template_name = 'list_book.html'"""
+    template_name = 'relationship_app/library_detail.html'
 
