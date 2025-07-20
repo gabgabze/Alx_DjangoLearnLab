@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from bookshelf.models import *
+from relationship_app.models import *
 from django.views.generic import ListView,DetailView
 # Create your views here.
 
