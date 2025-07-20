@@ -1,7 +1,7 @@
 from django.urls import path
-from relationship_app import views,BookDetail
+from relationship_app import views
 
 url_patterns =[
     path('books/', views.book_list, name='home'),
-    path('detail', BookDetail.as_view(), name='detail' ),
+    path('detail', views.BookDetail.as_view(), name='detail' ),
 ]
