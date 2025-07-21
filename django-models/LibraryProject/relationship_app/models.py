@@ -28,10 +28,6 @@ class Book(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
 
     class Meta:
-        ordering = ['title']
-        unique_together = ('title', 'author')
-        verbose_name = 'Book'
-        verbose_name_plural = 'Books'
         model = 'books'
         permissions = ('can _add_book','can_change_book','can_delete_book')
 
