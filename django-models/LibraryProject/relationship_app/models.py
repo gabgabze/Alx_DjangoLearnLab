@@ -29,7 +29,7 @@ class Book(models.Model):
 
     class Meta:
         model = 'books'
-        permissions = ('can _add_book','can_change_book','can_delete_book')
+        permissions = ('can_add_book','can_change_book','can_delete_book')
 
 
 
