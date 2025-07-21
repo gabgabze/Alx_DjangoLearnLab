@@ -1,9 +1,10 @@
+from django.contrib.auth.decorators import user_passes_test
 from django.shortcuts import render,redirect
 from .models import Library,Book
 from django.views.generic.detail import DetailView
-from django.contrib.auth.views import LogoutView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, logout
+from decorators import is_librarian,is_admin,is_member
 # Create your views here.
 
 def book_list(request):
@@ -27,3 +28,16 @@ def register(request):
     else:
         form = UserCreationForm()
     return render(request, 'relationship_app/register.html', {'form': form})
+
+""" create role views"""
+@user_passes_test(is_admin())
+def is_admin(request):
+    return render(request,'admin_view.html')
+
+@user_passes_test(is_librarian())
+def is_library(request):
+    return render(request,'librarian_view.html ')
+
+@user_passes_test(is_member())
+def is_member(request):
+    return render(request,'member_view.html')
