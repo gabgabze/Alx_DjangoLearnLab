@@ -31,8 +31,6 @@ class Book(models.Model):
         model = 'books'
         permissions = ('can_add_book','can_change_book','can_delete_book')
 
-
-
 class Library(models.Model):
     name = models.CharField(max_length=50)
     books = models.ManyToManyField(Book)
