@@ -30,20 +30,17 @@ def register(request):
     return render(request, 'relationship_app/register.html', {'form': form})
 
 """ create role views"""
-@user_passes_test(is_admin, login_url='login')
+@user_passes_test(is_admin)
 def admin_view(request):
-    if request.user.is_superuser:
-        return render(request,'relationship_app/admin_view.html')
+    return render(request,'relationship_app/admin_view.html')
 
-@user_passes_test(is_librarian, login_url='login')
-def librarian_view(request, user=None):
-    if user.is_librarian:
-        return render(request,'relationship_app/librarian_view.html')
+@user_passes_test(is_librarian)
+def librarian_view(request):
+    return render(request,'relationship_app/librarian_view.html')
 
-@user_passes_test(is_member, login_url='login')
-def member_view(request, user=None):
-    if user.is_member:
-        return render(request,'relationship_app/member_view.html')
+@user_passes_test(is_member)
+def member_view(request):
+    return render(request,'relationship_app/member_view.html')
 
 
 @permission_required(relationship_app.can_add_book,login_url='login')
