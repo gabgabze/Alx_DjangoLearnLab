@@ -48,18 +48,18 @@ def member_view(request):
     return render(request,'relationship_app/member_view.html',context)
 
 
-@permission_required(relationship_app.views.add_book,login_url='login')
+@permission_required(relationship_app.can_add_book,login_url='login')
 def add_book(request):
     context ={'add_book': add_book}
     return render(request,context)
 
-@permission_required('relationship_app.can_delete_book', login_url='login')
+@permission_required('relationship_app.can_delete_book', login_url='/login/')
 def delete_book(request,pk):
     book = Book.objects.get(pk=pk)
     book.delete()
     return redirect('list_books')
 
-@permission_required(relationship_app.edit_book, login_url='/login/')
+@permission_required(relationship_app.can_change_book, login_url='/login/')
 def edit_book(request,pk):
     book = Book.objects.get(pk=pk)
     return redirect('list_books')
