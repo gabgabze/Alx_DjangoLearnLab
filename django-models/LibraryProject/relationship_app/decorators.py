@@ -1,8 +1,8 @@
-def admin(user):
+def is_admin(user):
     return user.is_authenticated and getattr(user, 'role', None) == 'Admin'
 
-def librarian(user):
+def is_librarian(user):
     return user.is_authenticated and getattr(user, 'role', None) == 'Librarian'
 
-def member(user):
+def is_member(user):
     return user.is_authenticated and getattr(user, 'role', None) == 'Member'
