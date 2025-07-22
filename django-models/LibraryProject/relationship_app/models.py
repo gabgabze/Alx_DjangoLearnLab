@@ -2,17 +2,18 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your user model
-USER_ROLES ={
-    'Admin':'Admin',
-    'Librarian':'Librarian',
-    'Member':'Member'
-}
+USER_ROLES =[
+    ('Admin','Admin'),
+    ('Librarian','Librarian'),
+    ('Member','Member')
+]
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,related_name='profile')
-    role = models.CharField(max_length=100, choices=USER_ROLES, default='Member')
+    role = models.CharField(max_length=100, choices=USER_ROLES)
 
     def __str__(self):
         return self.user.username
+        #return f"{self.user.username} - {self.role}"
         #return str(self.user)
 
 # Author model

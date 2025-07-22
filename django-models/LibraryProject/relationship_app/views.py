@@ -1,7 +1,5 @@
-from django.contrib.auth.decorators import permission_required
+from django.contrib.auth.decorators import permission_required,user_passes_test
 from django.shortcuts import render,redirect
-
-import relationship_app.views
 from .models import Library,Book
 from django.views.generic.detail import DetailView
 from django.contrib.auth.forms import UserCreationForm
@@ -32,20 +30,20 @@ def register(request):
     return render(request, 'relationship_app/register.html', {'form': form})
 
 """ create role views"""
-#@user_passes_test(is_admin)
+@user_passes_test(is_admin, login_url='login')
 def admin_view(request):
-    context ={}
-    return render(request,'relationship_app/admin_view.html',context)
+    #context ={}
+    return render(request,'relationship_app/admin_view.html')
 
-#@user_passes_test(is_librarian)
+@user_passes_test(is_librarian, login_url='login')
 def librarian_view(request):
-    context = {}
-    return render(request,'relationship_app/librarian_view.html',context)
+    #context = {}
+    return render(request,'relationship_app/librarian_view.html')
 
-#@user_passes_test(is_member)
+@user_passes_test(is_member, login_url='login')
 def member_view(request):
-    context = {}
-    return render(request,'relationship_app/member_view.html',context)
+    #context = {}
+    return render(request,'relationship_app/member_view.html')
 
 
 @permission_required(relationship_app.can_add_book,login_url='login')
