@@ -1,4 +1,4 @@
-from django.contrib.auth.decorators import user_passes_test,login_required,permission_required
+from django.contrib.auth.decorators import permission_required
 from django.shortcuts import render,redirect
 
 import relationship_app.views
