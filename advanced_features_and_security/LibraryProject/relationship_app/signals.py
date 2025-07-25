@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.db.models.signals import post_save  # acts when saving is on db
-from django.contrib.auth.models import User
+from django.conf import settings
 from django.dispatch import receiver #  listen for the signal and "receive" it when it fires
 from .models import UserProfile
 
