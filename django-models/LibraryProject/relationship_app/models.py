@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from Introduction_to_Django.LibraryProject.LibraryProject.settings import AUTH_USER_MODEL
 
 # Create your user model
 USER_ROLES =[
@@ -8,11 +8,11 @@ USER_ROLES =[
     ('Member','Member')
 ]
 class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE,related_name='userprofile')
+    user = models.OneToOneField(AUTH_USER_MODEL, on_delete=models.CASCADE,related_name='profile')
     role = models.CharField(max_length=100, choices=USER_ROLES)
 
     def __str__(self):
-        return f"{self.user.username} - {self.role}"
+        return f"{self.user} - {self.role}"
         #return str(self.user)
 
 # Author model
@@ -28,7 +28,7 @@ class Book(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
 
     class Meta:
-        model = 'books'
+        db_table = 'Book'
         permissions = ('can_add_book','can_change_book','can_delete_book')
 
 class Library(models.Model):
