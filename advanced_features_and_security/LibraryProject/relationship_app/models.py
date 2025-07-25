@@ -1,8 +1,8 @@
-from django.db import models
+"""from django.db import models
 from django.contrib.auth.models import AbstractUser,BaseUserManager
 
 
-"""create customUser"""
+#create customUser
 class CustomUser(AbstractUser):
     date_of_birth = models.DateField(null=True)
     profile_photo = models.ImageField(upload_to='profile_photos')
@@ -11,7 +11,7 @@ class CustomUser(AbstractUser):
         return self.username
 
 
-"""create custom user manager"""
+#create custom user manager
 class CustomUserManager(BaseUserManager):
     def create_user(self, email, date_of_birth,profile_photo,password=None, **extra_fields):
         if not email:
@@ -32,7 +32,7 @@ class CustomUserManager(BaseUserManager):
         user.is_staff = True
         user.save()
         return user
-
+"""
 
 
 
