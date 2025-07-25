@@ -1,6 +1,5 @@
-from django.contrib.auth.decorators import permission_required,user_passes_test
+"""from django.contrib.auth.decorators import permission_required,user_passes_test
 from django.shortcuts import render,redirect
-from .models import Library,Book
 from django.views.generic.detail import DetailView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, logout
@@ -29,7 +28,7 @@ def register(request):
         form = UserCreationForm()
     return render(request, 'relationship_app/register.html', {'form': form})
 
-""" create role views"""
+#create role views
 @user_passes_test(is_admin)
 def admin_view(request):
     context ={
@@ -60,4 +59,4 @@ def delete_book(request,pk):
 @permission_required('relationship_app.can_change_book', login_url='/login/')
 def edit_book(request,pk):
     book = Book.objects.get(pk=pk)
-    return redirect('list_books')
+    return redirect('list_books')"""
