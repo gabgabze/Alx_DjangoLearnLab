@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90af70dc-a1b1-4d03-9052-ccb1bb1c042d" name="Changes" comment="" />
+    <list default="true" id="90af70dc-a1b1-4d03-9052-ccb1bb1c042d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Introduction_to_Django/LibraryProject/LibraryProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Introduction_to_Django/LibraryProject/LibraryProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Introduction_to_Django/LibraryProject/LibraryProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Introduction_to_Django/LibraryProject/LibraryProject/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Introduction_to_Django/LibraryProject/bookshelf/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Introduction_to_Django/LibraryProject/bookshelf/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Introduction_to_Django/LibraryProject/bookshelf/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Introduction_to_Django/LibraryProject/bookshelf/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/advanced_features_and_security/LibraryProject/LibraryProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/advanced_features_and_security/LibraryProject/LibraryProject/settings.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,46 +31,75 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "waregagbagbo"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;waregagbagbo&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/gabgabze/Alx_DjangoLearnLab.git",
-    "accountId": "ba63e45a-5fb0-46c7-8400-3363202ef3b6"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/gabgabze/Alx_DjangoLearnLab.git&quot;,
+    &quot;accountId&quot;: &quot;ba63e45a-5fb0-46c7-8400-3363202ef3b6&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="309UffCRRNrJ4ma3pRyBTdNVUt6" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.decorators.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Alx_DjangoLearnLab\django-models\LibraryProject\templates\relationship_app" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.decorators">
+    <configuration name="decorators" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Alx_DjangoLearnLab" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/django-models/LibraryProject/relationship_app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/django-models/LibraryProject/relationship_app/decorators.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Alx_DjangoLearnLab" type="Python.DjangoServer" factoryName="Django server">
       <module name="Alx_DjangoLearnLab" />
       <option name="ENV_FILES" value="" />
@@ -88,6 +124,11 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.decorators" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -105,11 +146,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1753039391610</updated>
-      <workItem from="1753039395184" duration="5528000" />
+      <workItem from="1753039395184" duration="6413000" />
+      <workItem from="1753066508264" duration="8994000" />
+      <workItem from="1753129179356" duration="6532000" />
+      <workItem from="1753167474375" duration="7079000" />
+      <workItem from="1753258044911" duration="596000" />
+      <workItem from="1753368798770" duration="1192000" />
+      <workItem from="1753434961836" duration="11009000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Alx_DjangoLearnLab$decorators.coverage" NAME="decorators Coverage Results" MODIFIED="1753077564266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/django-models/LibraryProject/relationship_app" />
   </component>
 </project>
