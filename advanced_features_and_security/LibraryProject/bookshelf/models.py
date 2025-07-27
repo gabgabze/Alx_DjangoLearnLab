@@ -34,15 +34,15 @@ class CustomUserManager(BaseUserManager):
         return user
 
 
-class Editor(models.Model):
+class UserActivity(models.Model):
     name = models.CharField(max_length=100)
     #profile = models.OneToOneField(AUTH_USER_MODEL, on_delete=models.CASCADE)
     def __str__(self):
         return self.name
 
     class Meta:
-        verbose_name = 'Editor'
-        verbose_name_plural = 'Editors'
+        verbose_name = 'user activity'
+        verbose_name_plural = 'activities_perm'
         ordering = ['name']
         permissions = [
             ('can_vew','can_create'),
