@@ -57,4 +57,8 @@ class Book(models.Model):
 
 
     def __str__(self):
-        return self.name
+        return self.title
+    class Meta:
+        verbose_name = 'book'
+        verbose_name_plural = 'books'
+        ordering = ['title']

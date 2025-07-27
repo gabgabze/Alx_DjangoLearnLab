@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import CustomUser,UserActivity
+from .models import CustomUser,UserActivity,Book
 
 # Register your models here.
 class CustomUserAdmin(admin.ModelAdmin):
@@ -8,5 +8,6 @@ class CustomUserAdmin(admin.ModelAdmin):
 # Register your models here.
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(UserActivity)
+admin.site.register(Book)
 
 
