@@ -169,13 +169,14 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 
 # Basic Security Headers
 SECURE_BROWSER_XSS_FILTER = True
-X_FRAME_OPTIONS = 'DENY'
-SECURE_CONTENT_TYPE_NOSNIFF = True
+X_FRAME_OPTIONS = 'DENY'   # prevent the site from being framed and protect against clickjacking.
+SECURE_CONTENT_TYPE_NOSNIFF = True  # prevent browsers from MIME-sniffing; a response away from the declared content-type.
+
 
 # Additional recommended security settings
-SECURE_HSTS_SECONDS = 31536000  # 1 year
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_SECONDS = 31536000  # 1 year access
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True # include all subdomains in the HSTS policy and to allow preloading.
+SECURE_HSTS_PRELOAD = True # include all subdomains in the HSTS policy and to allow preloading.
 
 # HTTPS Settings (for production)
 SECURE_SSL_REDIRECT = True  # Redirect HTTP to HTTPS
