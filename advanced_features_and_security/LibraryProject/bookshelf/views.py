@@ -63,3 +63,5 @@ def add_book(request):
 
     return render(request, 'books/add.html')
 
+class FormView(ExampleForm):
+    pass
