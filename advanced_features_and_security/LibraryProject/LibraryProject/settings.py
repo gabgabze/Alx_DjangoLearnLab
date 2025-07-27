@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
+from django.conf.global_settings import CSRF_COOKIE_SECURE
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-j37pes1*ig4%ryqmgcr6s*dtm^8ji5qofkc7zywyvb7(l=(+p4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 AUTH_USER_MODEL ='bookshelf.CustomUser'
 
 
@@ -50,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'csp.middleware.CSPMiddleware'
 ]
 
 ROOT_URLCONF = 'LibraryProject.urls'
@@ -123,3 +126,73 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# settings.py - Security Configuration
+
+# ==================== XSS PROTECTION ====================
+# Enables browser's built-in XSS (Cross-Site Scripting) protection
+SECURE_BROWSER_XSS_FILTER = True
+
+# What this does:
+# - Sends "X-XSS-Protection: 1; mode=block" header
+# - Tells browser to block pages if XSS attack detected
+# - Modern browsers have this enabled by default, but this ensures it
+
+
+# ==================== CLICKJACKING PROTECTION ====================
+# Prevents your site from being embedded in frames/iframes
+X_FRAME_OPTIONS = 'DENY'
+
+# Options:
+# 'DENY' - Never allow framing (most secure)
+# 'SAMEORIGIN' - Allow framing only from same domain
+# 'ALLOW-FROM uri' - Allow framing from specific URI (deprecated)
+
+# Examples of different configurations:
+# X_FRAME_OPTIONS = 'DENY'        # Block all framing
+# X_FRAME_OPTIONS = 'SAMEORIGIN'  # Allow same-origin framing
+
+
+# ==================== CONTENT TYPE SNIFFING PROTECTION ====================
+# Prevents browsers from guessing content types
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# What this does:
+# - Sends "X-Content-Type-Options: nosniff" header
+# - Forces browser to respect the Content-Type header
+# - Prevents MIME type confusion attacks
+
+
+# ==================== COMPLETE SECURITY CONFIGURATION ====================
+
+# Basic Security Headers
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = 'DENY'
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# Additional recommended security settings
+SECURE_HSTS_SECONDS = 31536000  # 1 year
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+
+# HTTPS Settings (for production)
+SECURE_SSL_REDIRECT = True  # Redirect HTTP to HTTPS
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Cookie Security
+SESSION_COOKIE_SECURE = True  # Only send session cookie over HTTPS
+CSRF_COOKIE_SECURE = True     # Only send CSRF cookie over HTTPS
+SESSION_COOKIE_HTTPONLY = True # Prevent JavaScript access to session cookie
+CSRF_COOKIE_HTTPONLY = True    # Prevent JavaScript access to CSRF cookie
+
+# Additional Security Settings
+SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'
+SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin'
+
+"""Define your CSP"""
+CSP_DEFAULT_SRC = ("'self'",)
+CSP_SCRIPT_SRC = ("'self'", "https://apis.example.com")
+CSP_STYLE_SRC = ("'self'", "https://fonts.googleapis.com")
+CSP_IMG_SRC = ("'self'", "data:")

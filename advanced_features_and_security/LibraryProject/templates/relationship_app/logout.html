@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>You have been logged out</h1>
+    {% csrf_token %}
     <a href="{% url 'login' %}">Login again</a>
 </body>
 </html>
