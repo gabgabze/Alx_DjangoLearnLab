@@ -34,10 +34,17 @@ class CustomUserManager(BaseUserManager):
         return user
 
 
-"""class Book(models.Model):
-    title = models.CharField(max_length=200)
-    author = models.CharField(max_length=100)
-    publication_year = models.IntegerField()
-
+class Editor(models.Model):
+    name = models.CharField(max_length=100)
+    #profile = models.OneToOneField(AUTH_USER_MODEL, on_delete=models.CASCADE)
     def __str__(self):
-        return self.name"""
+        return self.name
+
+    class Meta:
+        verbose_name = 'Editor'
+        verbose_name_plural = 'Editors'
+        ordering = ['name']
+        permissions = [
+            ('can_vew','can_create'),
+            ('can_edit','can_delete')
+        ]

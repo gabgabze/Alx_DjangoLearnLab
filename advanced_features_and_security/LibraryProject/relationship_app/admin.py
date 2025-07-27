@@ -1,4 +1,4 @@
-from django.contrib import admin
+"""from django.contrib import admin
 from .models import Editor
 
 class EditorAdmin(admin.ModelAdmin):
@@ -6,4 +6,4 @@ class EditorAdmin(admin.ModelAdmin):
     search_fields = ('name',)
     list_filter = ('name',)
 
-admin.site.register(Editor, EditorAdmin)
+admin.site.register(Editor, EditorAdmin)"""
