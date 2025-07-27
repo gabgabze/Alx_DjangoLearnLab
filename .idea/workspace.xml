@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="90af70dc-a1b1-4d03-9052-ccb1bb1c042d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Introduction_to_Django/LibraryProject/LibraryProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Introduction_to_Django/LibraryProject/LibraryProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Introduction_to_Django/LibraryProject/LibraryProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Introduction_to_Django/LibraryProject/LibraryProject/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Introduction_to_Django/LibraryProject/bookshelf/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Introduction_to_Django/LibraryProject/bookshelf/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Introduction_to_Django/LibraryProject/bookshelf/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Introduction_to_Django/LibraryProject/bookshelf/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/advanced_features_and_security/LibraryProject/LibraryProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/advanced_features_and_security/LibraryProject/LibraryProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-models/LibraryProject/LibraryProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django-models/LibraryProject/LibraryProject/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,24 +51,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Python.decorators.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.decorators.executor": "Debug",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "terminal",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Alx_DjangoLearnLab\advanced_features_and_security\LibraryProject\bookshelf" />
       <recent name="D:\Alx_DjangoLearnLab\django-models\LibraryProject\templates\relationship_app" />
     </key>
   </component>
@@ -152,7 +149,8 @@
       <workItem from="1753167474375" duration="7079000" />
       <workItem from="1753258044911" duration="596000" />
       <workItem from="1753368798770" duration="1192000" />
-      <workItem from="1753434961836" duration="11009000" />
+      <workItem from="1753434961836" duration="11266000" />
+      <workItem from="1753568679345" duration="12431000" />
     </task>
     <servers />
   </component>
