@@ -9,6 +9,8 @@ class CustomUser(AbstractUser):
     def __str__(self):
         return self.username
 
+
+
 """create custom user manager"""
 class CustomUserManager(BaseUserManager):
     def create_user(self, email, date_of_birth,profile_photo,password=None, **extra_fields):

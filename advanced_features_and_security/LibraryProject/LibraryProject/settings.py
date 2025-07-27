@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
-from Introduction_to_Django.LibraryProject.LibraryProject.settings import AUTH_USER_MODEL
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,6 +26,7 @@ SECRET_KEY = 'django-insecure-j37pes1*ig4%ryqmgcr6s*dtm^8ji5qofkc7zywyvb7(l=(+p4
 DEBUG = True
 
 ALLOWED_HOSTS = []
+AUTH_USER_MODEL ='bookshelf.CustomUser'
 
 
 # Application definition
@@ -124,4 +123,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-AUTH_USER_MODEL ='bookshelf.CustomUser'
