@@ -17,6 +17,7 @@ class BookListTestCase(APITestCase):
         url = 'api/book-list/'
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertIsInstance(response.data, list)
 
 
 class BookDetailTestCase(APITestCase):
@@ -24,10 +25,6 @@ class BookDetailTestCase(APITestCase):
         Book.objects.create("")
         Book.objects.create("")
 
-class APITestCase(APITestCase):
-    def setUp(self):
-        Book.objects.create("")
-        Book.objects.create("")
 
     def test_book(self):
         url = 'api/book-detail/'
