@@ -13,8 +13,6 @@ class BookSerializer(serializers.ModelSerializer):
         fields = '__all__'
         read_only_fields = ('id',)
 
-"""import datettime do the data checks against future and return data"""
-
     def validate(self, data):
         """get the current date"""
         current_year = datetime.now().year
