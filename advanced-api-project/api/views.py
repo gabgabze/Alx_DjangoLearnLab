@@ -16,7 +16,7 @@ class BookDetailView(generics.RetrieveAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     permission_classes = (IsAuthenticatedOrReadOnly,)
-    
+
     def get_object(self):
         return Book.objects.get(pk=self.kwargs['pk'])
 
