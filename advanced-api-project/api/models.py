@@ -8,6 +8,7 @@ class Author(models.Model):
         return self.name
 
 """Book model to hold book details in the db"""
+
 class Book(models.Model):
     title = models.CharField(max_length=100)
     publication_year = models.IntegerField()
