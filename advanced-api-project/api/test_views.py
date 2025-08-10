@@ -1,19 +1,22 @@
 from django.test import TestCase
 from api.models import *
+from rest_framework import status
 
 """create a Book test case"""
 
 class APITestCase(TestCase):
     def setUp(self):
         Book.objects.create("")
-        Book.objects.create("")
-        Book.objects.create("")
-        Book.objects.create("")
-
 
 class BookListTestCase(APITestCase):
     def setUp(self):
         Book.objects.create("")
+
+    # create a test endpoint method
+    def test_book(self):
+        url = 'api/book-list/'
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
 
 class BookDetailTestCase(APITestCase):
@@ -21,16 +24,24 @@ class BookDetailTestCase(APITestCase):
         Book.objects.create("")
         Book.objects.create("")
 
-class APITestCase(BookTestCase):
+class APITestCase(APITestCase):
     def setUp(self):
         Book.objects.create("")
         Book.objects.create("")
 
+    def test_book(self):
+        url = 'api/book-detail/'
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
 class BookUpdateTestCase(APITestCase):
     def setUp(self):
         Book.objects.create("")
-        Book.objects.create("")
-        Book.objects.create("")
+
+    def test_book(self):
+        url = 'api/books/update'
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
 class BookDeleteTestCase(APITestCase):
     def setUp(self):
