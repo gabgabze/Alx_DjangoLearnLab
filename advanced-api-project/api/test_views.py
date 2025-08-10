@@ -1,12 +1,9 @@
-from django.test import TestCase
 from api.models import *
 from rest_framework import status
+from django.contrib.auth.models import User
+from rest_framework.test import APITestCase
 
 """create a Book test case"""
-
-class APITestCase(TestCase):
-    def setUp(self):
-        Book.objects.create("")
 
 class BookListTestCase(APITestCase):
     def setUp(self):
@@ -44,3 +41,26 @@ class BookDeleteTestCase(APITestCase):
     def setUp(self):
         Book.objects.create("")
         Book.objects.create("")
+
+
+"""create a test case db"""
+
+class DBTestCase(APITestCase):
+    def setUp(self):
+        """create a test case db"""
+        self.user = User.objects.create_user(
+            username='testuser',
+            email='<EMAIL>',
+            password='<PASSWORD>'
+        )
+    def test_db(self):
+        """login user using django database"""
+        login_success = self.client.login(
+            username='testuser',
+            password='<PASSWORD>'
+        )
+        self.assertTrue(login_success)
+
+        # Now make authenticated request
+        response = self.client.get('api/db/')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
