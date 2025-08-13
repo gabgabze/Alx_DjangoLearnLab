@@ -10,9 +10,6 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     avatar = models.ImageField(upload_to='avatars/')
 
-    def __str__(self):
-        return self.user.username
-
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
