@@ -6,9 +6,9 @@ from django.conf import settings
 
 # Create your models here.
 # create custom user
-class UserProfile(models.Model):
+"""class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    avatar = models.ImageField(upload_to='avatars/')
+    avatar = models.ImageField(upload_to='avatars/')"""
 
 
 class Post(models.Model):
