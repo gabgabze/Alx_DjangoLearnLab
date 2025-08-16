@@ -28,3 +28,6 @@ def login(request):
 # logout view
 def logout(request):
     return render(request, 'blog/logout.html')
+
+def profile(request):
+    return render(request, 'blog/profile.html')
