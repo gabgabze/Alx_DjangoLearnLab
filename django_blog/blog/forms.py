@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post,CustomUser
+from .models import Post,CustomUser,Comment
 from django.contrib.auth.forms import UserCreationForm
 
 class CustomUserCreationForm(UserCreationForm): #automatically gets username, password
@@ -26,6 +26,19 @@ class PostForm(forms.ModelForm):
         content = cleaned_data.get('content')
         category = cleaned_data.get('category')
         author = cleaned_data.get('author')
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('content', 'author', 'post')
+
+    def clean(self):
+        cleaned_data = super(CommentForm, self).clean()
+        content = cleaned_data.get('content')
+        author = cleaned_data.get('author')
+        post = cleaned_data.get('post')
+        comment = cleaned_data.get('comment')
 
 
 
