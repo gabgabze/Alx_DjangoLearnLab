@@ -1,8 +1,9 @@
 from lib2to3.fixes.fix_input import context
-
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
+
 # Create your views here.
 # register view
 def register(request):
@@ -31,3 +32,30 @@ def logout(request):
 
 def profile(request):
     return render(request, 'blog/profile.html')
+
+# CBV views for the post
+class PostListView(ListView):
+    model = Post
+    template_name = 'blog/post_list.html'
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+
+class PostDetailView(DetailView):
+    model = Post
+    template_name = 'blog/post_detail.html'
+    context_object_name = 'post'
+    def get_context_data(self, **kwargs):
+        pass
+
+class PostCreateView(CreateView):
+    model = Post
+    template_name = 'blog/post_create.html'
+
+class PostUpdateView(UpdateView):
+    model = Post
+    template_name = 'blog/post_update.html'
+
+class PostDeleteView(DeleteView):
+    model = Post
+    template_name = 'blog/post_delete.html'
+

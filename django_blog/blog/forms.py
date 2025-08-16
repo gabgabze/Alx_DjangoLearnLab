@@ -15,3 +15,17 @@ class CustomUserCreationForm(UserCreationForm): #automatically gets username, pa
             user.save()
         return user
 
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ('title', 'content', 'category', 'author', 'image')
+
+    def clean(self):
+        cleaned_data = super(PostForm, self).clean()
+        title = cleaned_data.get('title')
+        content = cleaned_data.get('content')
+        category = cleaned_data.get('category')
+        author = cleaned_data.get('author')
+
+
+
