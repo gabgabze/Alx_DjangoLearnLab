@@ -1,0 +1,9 @@
+{% base.html %}
+{% load static % }
+<form method="post">
+    {% csrf_token %}
+    <!-- Your form fields here -->
+    {{ posts }}
+    <button type="submit">Submit</button>
+</form>
+{% end for %}

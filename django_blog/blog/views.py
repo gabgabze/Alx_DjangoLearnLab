@@ -49,10 +49,12 @@ class PostDetailView(DetailView):
 
 class PostCreateView(CreateView):
     model = Post
+    context_object_name = 'post'
     template_name = 'blog/post_create.html'
 
 class PostUpdateView(UpdateView):
     model = Post
+    context_object_name = 'post'
     template_name = 'blog/post_update.html'
 
 class PostDeleteView(DeleteView):
