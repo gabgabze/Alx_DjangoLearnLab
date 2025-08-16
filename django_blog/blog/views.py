@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 # Create your views here.
 # register view
@@ -52,12 +53,19 @@ class PostCreateView(CreateView):
     context_object_name = 'post'
     template_name = 'blog/post_create.html'
 
+
+@login_required(login_url='/login/')
+@user_passes_test(lambda u: u.is_authenticated())
 class PostUpdateView(UpdateView):
     model = Post
     context_object_name = 'post'
     template_name = 'blog/post_update.html'
 
+
+@login_required(login_url='/login/')
+@user_passes_test(lambda u: u.is_authenticated())
 class PostDeleteView(DeleteView):
     model = Post
     template_name = 'blog/post_delete.html'
+    
 
