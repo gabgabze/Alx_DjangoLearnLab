@@ -2,9 +2,10 @@ from lib2to3.fixes.fix_input import context
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post
+from .models import Post,Comment
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from .forms import CommentForm
 
 # Create your views here.
 # register view
@@ -81,3 +82,43 @@ class PostDeleteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
             return True
 
 
+
+# comment form View
+
+class CommentListView(ListView):
+    model = Comment
+    template_name = 'blog/comment_list.html'
+    context_object_name = 'comments'
+    ordering = ['-date_posted']
+
+class CommentDetailView(DetailView):
+    model = Comment
+    template_name = 'blog/comment_detail.html'
+    context_object_name = 'comment'
+    def get_context_data(self, **kwargs):
+        pass
+class CommentCreateView(LoginRequiredMixin,UserPassesTestMixin,CreateView):
+    model = Comment
+    context_object_name = 'comment'
+    template_name = 'blog/comment_create.html'
+    def test_func(self):
+        comment = self.get_object()
+        if self.request.user == comment.author or self.request.user.is_staff:
+            return True
+
+class CommentUpdateView(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
+    model = Comment
+    context_object_name = 'comment'
+    template_name = 'blog/comment_update.html'
+    def test_func(self):
+        comment = self.get_object()
+        if self.request.user == comment.author or self.request.user.is_staff:
+            return True
+
+class CommentDeleteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
+    model = Comment
+    context_object_name = 'comment'
+    def test_func(self):
+        comment = self.get_object()
+        if self.request.user == comment.author or self.request.user.is_staff:
+            return True
