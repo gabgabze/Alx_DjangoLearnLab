@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 # Create your views here.
 # register view
@@ -54,18 +55,29 @@ class PostCreateView(CreateView):
     template_name = 'blog/post_create.html'
 
 
-@login_required(login_url='/login/')
-@user_passes_test(lambda u: u.is_authenticated())
-class PostUpdateView(UpdateView):
+#@login_required(login_url='/login/')
+#@user_passes_test(lambda u: u.is_authenticated())
+class PostUpdateView(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
     model = Post
     context_object_name = 'post'
     template_name = 'blog/post_update.html'
 
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author or self.request.user.is_staff:
+            return True
 
-@login_required(login_url='/login/')
-@user_passes_test(lambda u: u.is_authenticated())
-class PostDeleteView(DeleteView):
+
+#@login_required
+#@user_passes_test(lambda u:(u,))
+class PostDeleteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
     model = Post
     template_name = 'blog/post_delete.html'
-    
+    context_object_name = 'post'
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author or self.request.user.is_staff:
+            return True
+
 
