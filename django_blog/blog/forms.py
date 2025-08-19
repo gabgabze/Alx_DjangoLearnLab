@@ -6,7 +6,7 @@ class CustomUserCreationForm(UserCreationForm): #automatically gets username, pa
     email = forms.EmailField()
     class Meta(UserCreationForm.Meta):
         model = CustomUser
-        fields = UserCreationForm.Meta.fields('email', 'bio', 'avatar')
+        fields = UserCreationForm.Meta.fields('bio','avatar',)
 
     def save(self, commit=True): # save to db immediately
         user = super(CustomUserCreationForm, self).save(commit=False)

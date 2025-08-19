@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 from rest_framework.test import APITestCase
 
 """create a Book test case"""
-
 class BookListTestCase(APITestCase):
     def setUp(self):
         Book.objects.create("")
@@ -16,17 +15,15 @@ class BookListTestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertIsInstance(response.data, list)
 
-
 class BookDetailTestCase(APITestCase):
     def setUp(self):
         Book.objects.create("")
-        Book.objects.create("")
-
 
     def test_book(self):
         url = 'api/book-detail/'
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertIsInstance(response.data, dict)
 
 class BookUpdateTestCase(APITestCase):
     def setUp(self):
@@ -36,11 +33,13 @@ class BookUpdateTestCase(APITestCase):
         url = 'api/books/update'
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertIsInstance(response.data, dict)
 
 class BookDeleteTestCase(APITestCase):
     def setUp(self):
         Book.objects.create("")
         Book.objects.create("")
+
 
 
 """create a test case db"""
