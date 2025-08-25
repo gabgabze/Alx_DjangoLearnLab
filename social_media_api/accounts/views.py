@@ -1,7 +1,10 @@
 from django.shortcuts import render
+from rest_framework.response import Response
+
 from .models import CustomUser
 from .serializers import CustomUserSerializer
-from rest_framework import generics, viewsets, permissions
+from rest_framework import generics, viewsets, permissions, status
+
 
 # Create your views here.
 
@@ -25,3 +28,4 @@ class CustomFollowerViewSet(generics.GenericAPIView):
         follower = self.request.user.followers.all()
         if follower:
             serializer.save(user=self.request.user)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
