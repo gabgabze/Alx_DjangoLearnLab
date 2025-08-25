@@ -21,6 +21,7 @@ class CommentViewSet(viewsets.ModelViewSet):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
     permission_classes = [permissions.IsAuthenticated]
+
     def get_queryset(self):
         if self.request.user.is_authenticated:
             return self.queryset.filter(author=self.request.user)
