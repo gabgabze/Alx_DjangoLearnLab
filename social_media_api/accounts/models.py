@@ -10,3 +10,6 @@ class CustomUser(AbstractUser):
     profile_picture = models.ImageField(upload_to='profile_pictures', blank=True)
     followers = models.ManyToManyField(settings.AUTH_USER_MODEL, symmetrical=False, related_name="followed_by")
     following = models.ManyToManyField('self', related_name="follows",symmetrical=False)
+
+    def __str__(self):
+        return self.username
