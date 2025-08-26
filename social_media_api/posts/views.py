@@ -1,10 +1,8 @@
-from warnings import filters
-
-from django.shortcuts import render
-
+from django.shortcuts import render, get_object_or_404
 from accounts.models import CustomUser
+from notifications.models import Notification
 from .models import Post, Comment
-from .serializers import PostSerializer, CommentSerializer
+from .serializers import PostSerializer, CommentSerializer,LikeSerializer
 from accounts.serializers import CustomUserSerializer
 from rest_framework import generics, viewsets, permissions
 
@@ -41,4 +39,12 @@ class CommentViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         if self.request.user.is_authenticated:
             return self.queryset.filter(author=self.request.user)
+
+
+class LikeViewSet(viewsets.ModelViewSet):
+    queryset = Like.objects.get_or_create(user=request.user, post=post)
+    posts = generics.get_object_or_404(Post, pk=pk)
+    serializer_class = LikeSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    notifications = Notifications.objects.create()
 
