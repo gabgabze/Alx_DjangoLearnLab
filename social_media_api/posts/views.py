@@ -48,3 +48,10 @@ class LikeViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
     notifications = Notification.objects.create()
 
+class UnlikeViewSet(viewsets.ModelViewSet):
+    queryset = Like.objects.all()
+    serializer_class = LikeSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    notifications = Notification.objects.create()
+
+
