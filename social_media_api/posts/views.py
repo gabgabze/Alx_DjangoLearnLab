@@ -46,5 +46,5 @@ class LikeViewSet(viewsets.ModelViewSet):
     posts = generics.get_object_or_404(Post, pk=pk)
     serializer_class = LikeSerializer
     permission_classes = [permissions.IsAuthenticated]
-    notifications = Notifications.objects.create()
+    notifications = Notification.objects.create()
 
